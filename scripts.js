@@ -8,7 +8,7 @@ function compare(clickValue){
         box1.classList.contains('hidden')
             document.getElementsByClassName('box1').classList.toggle('show')
             document.getElementsByClassName('box1').classList.remove('hidden')
-        
+        // toggle une class (hidden)
 
         
 
@@ -29,6 +29,8 @@ function compare(clickValue){
 
 }
 let box1 = document.getElementsByClassName('box1')
+
+// plus getElementsById ^
 //box1.classList.contains('hidden')
 console.log(box1)
 

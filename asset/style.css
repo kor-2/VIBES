@@ -13,6 +13,7 @@ body{
     rgba(238, 202, 44, 0.918) 50%, 
     rgb(255, 106, 143) 80%, 
     rgba(238, 202, 44, 0.918) 95%);
+    --rose: #ff1a8c;
 }
 #wrapper{
     max-width: 1024px;
@@ -26,7 +27,7 @@ strong{
 .ligne-rose{
     height: 3px;
     width: 60px;
-    background-color: #ff1a8c;
+    background-color: var(--rose);
     margin: 0 auto;
 }
 .ligne-rose-G{
@@ -232,9 +233,9 @@ section{
     color: #ff1a8c;
     font-weight: bold;
 }
-/*-------------*/
-/*-Commentaire-*/
-/*-------------*/
+/*--------------*/
+/*-Commentaires-*/
+/*--------------*/
 #com-container{
     padding: 10px 0;
 }
