@@ -1,52 +1,94 @@
-let btnPlus = document.querySelectorAll('.dropDown-info')
+let btnPlus = document.querySelectorAll('.dropDownInfo')
+let btnBurger = document.getElementById('btnBurger')
+
 
 function compare(clickValue){
 
     switch (clickValue) {
         case "box1":
-        let box1 = document.getElementsByClassName('box1')
-        box1.classList.contains('hidden')
-            document.getElementsByClassName('box1').classList.toggle('show')
-            document.getElementsByClassName('box1').classList.remove('hidden')
-        // toggle une class (hidden)
-
-        
+            document.getElementById('box1P').classList.toggle('hidden')
 
 
-            document.getElementsByClassName('box2').classList.add('hidden')
-            document.getElementsByClassName('box2').classList.remove('show')
-
-            document.getElementsByClassName('box3').classList.add('hidden')
-            document.getElementsByClassName('box3').classList.remove('show')
-        
-            
+            if (document.getElementById('iconBox1').classList.contains('fa-plus')) {
+                document.getElementById('iconBox1').classList.remove('fa-plus')
+                document.getElementById('iconBox1').classList.add('fa-minus')
+                
+            } else {
+                document.getElementById('iconBox1').classList.add('fa-plus')
+                document.getElementById('iconBox1').classList.remove('fa-minus')
+            }
             break;
-    
-        default:
+
+        case "box2":
+            document.getElementById('box2P').classList.toggle('hidden')
+            if (document.getElementById('iconBox2').classList.contains('fa-plus')) {
+                document.getElementById('iconBox2').classList.remove('fa-plus')
+                document.getElementById('iconBox2').classList.add('fa-minus')
+                
+            } else {
+                document.getElementById('iconBox2').classList.add('fa-plus')
+                document.getElementById('iconBox2').classList.remove('fa-minus')
+            }
+            break;
+
+        case "box3":
+            document.getElementById('box3P').classList.toggle('hidden')
+            if (document.getElementById('iconBox3').classList.contains('fa-plus')) {
+                document.getElementById('iconBox3').classList.remove('fa-plus')
+                document.getElementById('iconBox3').classList.add('fa-minus')
+                
+            } else {
+                document.getElementById('iconBox3').classList.add('fa-plus')
+                document.getElementById('iconBox3').classList.remove('fa-minus')
+            }
+            break;
+        case "burger":
+
+            let btnMenu = document.querySelectorAll('.btnMenu')
+
+            btnMenu.forEach(function(btnM){
+
+                btnM.classList.toggle('hidden')
+            })
+
             break;
     }
-
-
 }
-let box1 = document.getElementsByClassName('box1')
-
-// plus getElementsById ^
-//box1.classList.contains('hidden')
-console.log(box1)
-
-
-
-
 
 btnPlus.forEach(function(btn){
-
     btn.addEventListener('click', function(){
         
         boxSelec = btn.dataset.choice
-        //compare(boxSelec)
-
-        
+        compare(boxSelec)
     })
-
 })
+
+btnBurger.addEventListener('click', function(){
+
+    btnSelec = btnBurger.dataset.choice
+    compare(btnSelec)
+})
+
+
+
+let btnMenu = document.querySelectorAll('.btnMenu')
+if (document.getElementById('body').clientWidth < 695) {
+
+        btnMenu.forEach(function(btnM){
+
+            btnM.classList.add('hidden')
+            btnBurger.classList.remove('hidden')
+        })
+    
+}else{
+    btnMenu.forEach(function(btnM){
+
+        btnM.classList.remove('hidden')
+        btnBurger.classList.add('hidden')
+    })
+}
+
+
+
+
 

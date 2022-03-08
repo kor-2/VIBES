@@ -6,7 +6,6 @@ body{
     margin: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    background: rgb(238,188,44);
     background: linear-gradient(180deg, 
     rgba(238, 202, 44, 0.918) 1%, 
     rgb(255, 106, 143) 25%, 
@@ -34,6 +33,17 @@ strong{
     height: 3px;
     width: 40px;
     background-color: #ff1a8c;
+}
+/*--------------------------*/
+/*------css javascript------*/
+/*--------------------------*/
+
+
+.dropDownInfo{
+    cursor: pointer;
+}
+.hidden{
+    display: none;
 }
 
 
@@ -76,6 +86,33 @@ header{
 #nav-header ul li a i{
     border: 2px solid white;
     padding: 5px;
+}
+
+
+
+
+
+
+
+.burgerMenu{
+    display: none;
+    position: sticky;
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 20px;
+    z-index: 100;
+}
+.burgerMenu div{
+    width: 50%;
+    margin: auto;
+}
+
+.burgerMenu div a{
+    color: white;
+    border: 2px solid white;
+    padding: 5px;
+    background-color: #eebc2c;
 }
 
 
@@ -504,14 +541,32 @@ footer{
     #logo a img{
         width: 40%;
     }
+    .burgerMenu{
+        display: block;
+    }
     
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /*----------------*/
     /*------main------*/
     /*----------------*/
     #read-more div{
-        padding: 4em 3em 0 3em;
+        padding: 2em 3em 0 3em;
+    }
+    #tanzanie{
+        height: 450px;
     }
 
     #info-container{
@@ -547,6 +602,9 @@ footer{
     #galerie {
         
         grid-template-columns: repeat(2,1fr);
+    }
+    #galerie div:nth-child(2n+1){
+        display: none;
     }
     #info-foot{
         padding: 40px 2%;
@@ -637,15 +695,3 @@ footer{
 
 
 
-/*-------------------------------css javascript-------------------------------------*/
-
-
-.dropDown-info{
-    cursor: pointer;
-}
-.hidden{
-    display: none;
-}
-.show{
-    display: block;
-}
