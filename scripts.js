@@ -49,9 +49,9 @@ function compare(clickValue){
             
             if (document.getElementById('burger').classList.contains('fa-bars')) {
                 
-                document.getElementById('burger').classList.replace('fa-bars','fa-angle-up')
+                document.getElementById('burger').classList.replace('fa-bars','fa-xmark')
             }else{
-                document.getElementById('burger').classList.replace('fa-angle-up','fa-bars')
+                document.getElementById('burger').classList.replace('fa-xmark','fa-bars')
             }
 
             break;
@@ -94,24 +94,6 @@ btnBurger.addEventListener('click', function(){
     compare(btnSelec)
 })
 
-
-
-// let btnMenu = document.querySelectorAll('.btnMenu')
-// if (document.getElementById('body').clientWidth < 695) {
-
-//         btnMenu.forEach(function(btnM){
-
-//             btnM.classList.add('hidden')
-//             btnBurger.classList.remove('hidden')
-//         })
-    
-// }else{
-//     btnMenu.forEach(function(btnM){
-
-//         btnM.classList.remove('hidden')
-//         btnBurger.classList.add('hidden')
-//     })
-// }
 
 
 /* ---------------------------- */
