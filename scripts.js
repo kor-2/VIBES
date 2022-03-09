@@ -1,7 +1,3 @@
-let btnPlus = document.querySelectorAll('.dropDownInfo')
-let btnBurger = document.getElementById('btnBurger')
-
-
 function compare(clickValue){
 
     switch (clickValue) {
@@ -12,8 +8,8 @@ function compare(clickValue){
             if (document.getElementById('iconBox1').classList.contains('fa-plus')) {
                 document.getElementById('iconBox1').classList.remove('fa-plus')
                 document.getElementById('iconBox1').classList.add('fa-minus')
-                
             } else {
+                
                 document.getElementById('iconBox1').classList.add('fa-plus')
                 document.getElementById('iconBox1').classList.remove('fa-minus')
             }
@@ -24,7 +20,7 @@ function compare(clickValue){
             if (document.getElementById('iconBox2').classList.contains('fa-plus')) {
                 document.getElementById('iconBox2').classList.remove('fa-plus')
                 document.getElementById('iconBox2').classList.add('fa-minus')
-                
+
             } else {
                 document.getElementById('iconBox2').classList.add('fa-plus')
                 document.getElementById('iconBox2').classList.remove('fa-minus')
@@ -36,12 +32,12 @@ function compare(clickValue){
             if (document.getElementById('iconBox3').classList.contains('fa-plus')) {
                 document.getElementById('iconBox3').classList.remove('fa-plus')
                 document.getElementById('iconBox3').classList.add('fa-minus')
-                
             } else {
                 document.getElementById('iconBox3').classList.add('fa-plus')
                 document.getElementById('iconBox3').classList.remove('fa-minus')
             }
             break;
+
         case "burger":
 
             let btnMenu = document.querySelectorAll('.btnMenu')
@@ -50,11 +46,36 @@ function compare(clickValue){
 
                 btnM.classList.toggle('hidden')
             })
+            
+            if (document.getElementById('burger').classList.contains('fa-bars')) {
+                
+                document.getElementById('burger').classList.replace('fa-bars','fa-angle-up')
+            }else{
+                document.getElementById('burger').classList.replace('fa-angle-up','fa-bars')
+            }
 
             break;
     }
 }
 
+
+function filter(filtre){
+
+    let img = document.querySelectorAll('.imgGal')
+    
+    img.forEach(element =>{
+
+        if (filtre == 'all' || element.classList.contains(filtre)) {
+            element.classList.remove('hidden')
+        }else{
+            element.classList.add('hidden')
+        }
+    })
+}
+/* ------------------------------ */
+/* ------Boutton plus moins------ */
+/* ------------------------------ */
+let btnPlus = document.querySelectorAll('.dropDownInfo')
 btnPlus.forEach(function(btn){
     btn.addEventListener('click', function(){
         
@@ -63,6 +84,10 @@ btnPlus.forEach(function(btn){
     })
 })
 
+/* -------------------------- */
+/* ------Boutton burger------ */
+/* -------------------------- */
+let btnBurger = document.getElementById('btnBurger')
 btnBurger.addEventListener('click', function(){
 
     btnSelec = btnBurger.dataset.choice
@@ -71,24 +96,48 @@ btnBurger.addEventListener('click', function(){
 
 
 
-let btnMenu = document.querySelectorAll('.btnMenu')
-if (document.getElementById('body').clientWidth < 695) {
+// let btnMenu = document.querySelectorAll('.btnMenu')
+// if (document.getElementById('body').clientWidth < 695) {
 
-        btnMenu.forEach(function(btnM){
+//         btnMenu.forEach(function(btnM){
 
-            btnM.classList.add('hidden')
-            btnBurger.classList.remove('hidden')
-        })
+//             btnM.classList.add('hidden')
+//             btnBurger.classList.remove('hidden')
+//         })
     
-}else{
-    btnMenu.forEach(function(btnM){
+// }else{
+//     btnMenu.forEach(function(btnM){
 
-        btnM.classList.remove('hidden')
-        btnBurger.classList.add('hidden')
+//         btnM.classList.remove('hidden')
+//         btnBurger.classList.add('hidden')
+//     })
+// }
+
+
+/* ---------------------------- */
+/* ------Boutton top page------ */
+/* ---------------------------- */
+let topPage = document.getElementById('topPage')
+
+topPage.addEventListener("click", function() {
+    document.body.scrollIntoView({behavior: "smooth"});
+});
+
+/* -------------------------- */
+/* ------Filtre galeire------ */
+/* -------------------------- */
+
+// let imgGal = document.querySelectorAll('.imgGal')
+
+let btnFiltre = document.querySelectorAll('.choice')
+btnFiltre.forEach(function(btnF){
+
+    btnF.addEventListener('click', function(){
+        
+        btnSelec = btnF.dataset.choice
+        filter(btnSelec)
     })
-}
-
-
+})
 
 
 

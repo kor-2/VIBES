@@ -28,16 +28,15 @@
                     <li class="btnMenu"><a href="#">TESTIMONIALS</a></li>
                     <li class="btnMenu"><a href="#">CONTACT</a></li>
                     <li class="btnMenu"><a href="#">PAGES</a></li>
-                    <li id="btnBurger" data-choice="burger"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
                 </ul>
+                <div id="btnBurger" data-choice="burger">
+                    <a href="#">
+                        <i class="fa-solid fa-angle-up" id="burger"></i>
+                    </a>
+                </div>
             </nav>
             
         </header>
-<!--
-        <div class="burgerMenu">
-            <div><a href="#"><i class="fa-solid fa-bars"></i></a></div>
-        </div>
--->
         <main>
             <section>
                 <article id="read-more">
@@ -117,24 +116,25 @@
 
                 </article>
             </section>
+            
             <section id="gal-container">
                 <article id="galerie">
 
-                    <div><img src="asset/img/fleur-blanc.jpg" alt="fleur-blanc"></div>
-                    <div><img src="asset/img/fleur-bleu.jpg" alt="fleur-bleu"></div>
-                    <div><img src="asset/img/fleur-orange.jpg" alt="fleur-orange"></div>
-                    <div><img src="asset/img/fleur-rose.jpg" alt="fleur-rose"></div>
-                    <div><img src="asset/img/fleur-rouge.jpg" alt="fleur-rouge"></div>
-                    <div><img src="asset/img/fleur6.jpg" alt="fleur"></div>
-                    <div><img src="asset/img/fleur7.jpg" alt="fleur"></div>
-                    <div><img src="asset/img/fleur8.jpg" alt="fleur"></div>
+                    <div class="imgGal video"><img src="asset/img/fleur-blanc.jpg" alt="fleur-blanc"></div>
+                    <div class="imgGal audio"><img src="asset/img/fleur-bleu.jpg" alt="fleur-bleu"></div>
+                    <div class="imgGal video"><img src="asset/img/fleur-orange.jpg" alt="fleur-orange"></div>
+                    <div class="imgGal audio"><img src="asset/img/fleur-rose.jpg" alt="fleur-rose"></div>
+                    <div class="imgGal video"><img src="asset/img/fleur-rouge.jpg" alt="fleur-rouge"></div>
+                    <div class="imgGal image"><img src="asset/img/fleur6.jpg" alt="fleur"></div>
+                    <div class="imgGal image"><img src="asset/img/fleur7.jpg" alt="fleur"></div>
+                    <div class="imgGal image"><img src="asset/img/fleur8.jpg" alt="fleur"></div>
                 </article>
                 <nav id="nav-galerie">
                     <ul>
-                        <li><a href="#">ALL</a></li>
-                        <li><a href="#">AUDIO</a></li>
-                        <li><a href="#">IMAGE</a></li>
-                        <li><a href="#">VIDEO</a></li>
+                        <li><p class="choice" data-choice="all">ALL</p></li>
+                        <li><p class="choice" data-choice="audio">AUDIO</p></li>
+                        <li><p class="choice" data-choice="image">IMAGE</p></li>
+                        <li><p class="choice" data-choice="video">VIDEO</p></li>
                     </ul>
                     <div>
                         <a href="#" class="btn-rose">LOAD MORE</a>
@@ -142,6 +142,7 @@
                 </nav>
 
             </section>
+
             <section id="com-container">
                 <div class="main-h2">
 
@@ -203,6 +204,7 @@
                     <a href="#" class="btn-rose ">BECOME OUR CLIENT</a>
                 </div>
             </section>
+            
             <section>
                 <article id="buy-vibes">
                     
@@ -282,6 +284,7 @@
             
 
             </section>
+            
 
         </main>
         <footer>
@@ -331,8 +334,13 @@
                 </ul>
 
             </div>
-
+            
         </footer>
+        <div id="topPage">
+            <div>
+                <p><i class="fa-solid fa-arrow-up"></i></p>
+            </div>
+        </div>
     </div>
     <script src="scripts.js"></script>
 </body>
