@@ -34,6 +34,33 @@ strong{
     width: 40px;
     background-color: var(--rose);
 }
+
+#skin{
+    width: 25px;
+    background-color: #303030b2;
+    position: sticky;
+    top: 50px;
+    padding: 5px;
+}
+.moon{
+    color: white;
+    cursor: pointer;
+}
+.sun{
+    color: #eeca2c;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.moon:hover{
+    color: rgb(153, 152, 152);
+    cursor: pointer;
+}
+.sun:hover{
+    color: #b19000;
+    cursor: pointer;
+}
+
+
 /*--------------------------*/
 /*------css javascript------*/
 /*--------------------------*/
@@ -49,6 +76,30 @@ strong{
 .hide{
     display: none;
 }
+.accordionTitle {
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.accordionTitle + .accordionContent {
+    display: none;
+}
+  
+.accordionTitle.is-open + .accordionContent {
+    display: block;
+}
+
+.accordionTitle::before{
+    content: '\002B';
+    color: var(--rose);
+    font-size: 1.5em;
+}
+.accordionTitle.is-open::before{
+    content: '\2212';
+}
 
 
 /*------------------*/
@@ -63,20 +114,17 @@ strong{
 }
 
 #topPage div{
-    background-color: rgba(255, 212, 20, 0.918); 
+    background-color: rgba(255, 212, 20); 
     width: 50px;
     height: 50px;
     text-align: center;
     padding-top: 10px;
     border-radius: 50%;
-    border: 1px solid var(--rose);
     float: right;
     margin-right: 10px;
-
-
 }
 #topPage div p{
-    color: var(--rose);
+    color: white;
     text-decoration: none;
     font-size: 1.5em;
     padding: 0 15px;
@@ -235,7 +283,8 @@ section{
     grid-template-rows: repeat(2, 1fr);
     border-bottom: 1px solid #646464;
     border-top: 1px solid #646464;
-    
+    grid-auto-rows: 0px;
+    overflow-y: hidden;
 }
 
 #galerie div img{
@@ -513,7 +562,6 @@ footer{
 
     #nav-header{
         flex-direction: column;
-        align-items: center;
     }
     #nav-header ul{
         justify-content: center;
@@ -569,7 +617,7 @@ footer{
     /*------------------*/
     #nav-header{
         flex-direction: row;
-        
+        justify-content: space-between;
     }
     #nav-header ul {
         flex-direction: column;
@@ -579,7 +627,7 @@ footer{
     }
 
     #logo{
-        width: 20%;
+        width: 15%;
 
     }
     
@@ -605,8 +653,7 @@ footer{
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        width: 80%;
-        
+        width: 80%;        
     }
     .info-box {
         width: 100%;
@@ -629,6 +676,7 @@ footer{
     #galerie {
         
         grid-template-columns: repeat(2,1fr);
+        
     }
 
     #info-foot{
@@ -676,7 +724,6 @@ footer{
         text-align: center;
         border: none;
         padding: 0;
-        
     }
     /*--------------*/
     /*-GET IN TOUCH-*/
@@ -713,10 +760,4 @@ footer{
     #mention ul li a{
         padding: 0 5px;
     }
-
 }
-
-
-
-
-
