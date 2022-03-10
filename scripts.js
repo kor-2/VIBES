@@ -109,8 +109,6 @@ topPage.addEventListener("click", function() {
 /* ------Filtre galeire------ */
 /* -------------------------- */
 
-// let imgGal = document.querySelectorAll('.imgGal')
-
 let btnFiltre = document.querySelectorAll('.choice')
 btnFiltre.forEach(function(btnF){
 
@@ -122,4 +120,15 @@ btnFiltre.forEach(function(btnF){
 })
 
 
+/* ----------------------------- */
+/* ------Affichage galerie------ */
+/* ----------------------------- */
 
+if (window.screen.width < 695) {
+    let fleur = document.querySelectorAll('.imgGal')
+    
+    fleur[0].classList.add('hide')
+    fleur[1].classList.add('hide')
+    fleur[2].classList.add('hide')
+    fleur[3].classList.add('hide')
+}
