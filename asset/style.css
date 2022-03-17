@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body{
+.container{
     margin: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +12,10 @@ body{
     rgba(238, 202, 44, 0.918) 50%, 
     rgb(255, 106, 143) 80%, 
     rgba(238, 202, 44, 0.918) 95%);
-    --rose: #ff1a8c;
+    --background: #ff1a8c;
+    --color-font : #ff1a8c;
+    --topPageBg: #ffd414;
+    --white: #ffffff; 
 }
 #wrapper{
     max-width: 1024px;
@@ -26,15 +29,17 @@ strong{
 .ligne-rose{
     height: 3px;
     width: 60px;
-    background-color: var(--rose);
+    background-color: var(--background);
     margin: 0 auto;
 }
 .ligne-rose-G{
     height: 3px;
     width: 40px;
-    background-color: var(--rose);
+    background-color: var(--background);
 }
-
+/*----------------*/
+/*------skin------*/
+/*----------------*/
 #skin{
     width: 25px;
     background-color: #303030b2;
@@ -42,23 +47,30 @@ strong{
     top: 50px;
     padding: 5px;
 }
-.moon{
+#moon i{
     color: white;
     cursor: pointer;
 }
-.sun{
-    color: #eeca2c;
-    cursor: pointer;
-    margin-top: 5px;
-}
-.moon:hover{
+#moon i:hover{
     color: rgb(153, 152, 152);
     cursor: pointer;
 }
-.sun:hover{
-    color: #b19000;
-    cursor: pointer;
+
+
+
+.change{
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(46, 46, 46);
+    --background: #ffffff;
+    --color-font: #2e2e2e;
+    --topPageBg : #2e2e2e;
+    --white:#ffffff;
 }
+
+
+
 
 
 /*--------------------------*/
@@ -94,7 +106,7 @@ strong{
 
 .accordionTitle::before{
     content: '\002B';
-    color: var(--rose);
+    color: var(--color-font);
     font-size: 1.5em;
 }
 .accordionTitle.is-open::before{
@@ -114,7 +126,7 @@ strong{
 }
 
 #topPage div{
-    background-color: rgba(255, 212, 20); 
+    background-color: var(--topPageBg); 
     width: 50px;
     height: 50px;
     text-align: center;
@@ -262,7 +274,7 @@ section{
 }
 .info-box i{
     padding-right: 10px;
-    color: var(--rose);
+    color: var(--color-font);
     font-size: 1.8em;
     float: left;
 }
@@ -296,6 +308,7 @@ section{
 
 .imgGal{
     position: relative;
+    cursor: pointer;
     
     
 }
@@ -313,7 +326,7 @@ section{
     height: 100%;
     top: 0;
     right: 0;
-    color: var(--rose);
+    color: var(--color-font);
     background-color: #6464649f;
     align-items: center;
     justify-content: center;
@@ -323,6 +336,61 @@ section{
 
     border-bottom: 1px solid #646464;
 }
+
+
+
+/*-----------------*/
+/*------modal------*/
+/*-----------------*/
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+ }
+ .modalImage {
+    margin: auto;
+    display: block;
+    width: 60%;
+    height: auto;
+
+ }
+ #caption {
+    margin: auto;
+    display: block;
+    width: 60%;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+ }
+ .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+ }
+ .close:hover,
+ .close:focus {
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+ }
+
+
+
+
 #nav-galerie{
     padding: 50px 0;
     display: flex;
@@ -346,15 +414,17 @@ section{
     font-weight: bold;
 }
 #nav-galerie ul li p:hover{
-    color: var(--rose);
+    color: var(--color-font);
     cursor: pointer;
 }
 
+
+
 .btn-rose{
     padding: 8px 15px;
-    border: 2px solid var(--rose);
+    border: 2px solid var(--color-font);
     text-decoration: none;
-    color: var(--rose);
+    color: var(--color-font);
     font-weight: bold;
 }
 /*--------------*/
@@ -424,7 +494,7 @@ section{
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid var(--rose);
+    border: 2px solid var(--background);
 }
 
 /*--------------*/
@@ -445,10 +515,10 @@ section{
 }
 #get_in_touch form div button{
     padding: 10px;
-    background-color: var(--rose);
+    background-color: var(--color-font);
     border: none;
     font-weight: bold;
-    color: white;
+    color: var(--white);
 }
 #get_in_touch form div p{
     font-weight: bold;
@@ -458,7 +528,7 @@ section{
 }
 #get_in_touch form div p span{
     
-    color: var(--rose);
+    color: var(--color-font);
 
 }
 #get_in_touch form div p input{
@@ -518,7 +588,7 @@ footer{
     color: white;
 }
 .info-foot-cont span {
-    color: var(--rose);
+    color: var(--color-font);
 }
 .info-foot-cont form input{
     padding: 5px;
@@ -528,7 +598,7 @@ footer{
 }
 .info-foot-cont form a{
     padding: 10px;
-    border: 2px solid var(--rose);
+    border: 2px solid var(--background);
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -558,59 +628,8 @@ footer{
     padding-left: 15px;
 }
 
-@media screen and (max-width:900px){
 
-    #nav-header{
-        flex-direction: column;
-    }
-    #nav-header ul{
-        justify-content: center;
-    }
-}
-@media screen and (max-width:823px){
-
-    #logo{
-        width: 40%;
-    }
-    
-    #logo a img{
-        width: 40%;
-    }
-
-    #read-more div{
-        padding: 8em 6em 0 6em;
-    }
-
-
-
-    #info-container,
-    #nav-galerie,
-    #com-container article
-    {
-        width: 90%;
-    }
-    
-
-    #buy-vibes{
-        padding: 0 5em;
-    }
-    #get_in_touch form div{
-        width: 45%;
-    }
-
-
-    #galerie {
-        
-        grid-template-columns: repeat(3,1fr);
-    }
-    #info-foot{
-        padding: 40px 5%;
-    }
-    #mention{
-        width: 90%;
-    }
-}
-@media screen and (max-width:695px){
+@media screen and (max-width:768px){
 
     /*------------------*/
     /*------header------*/
@@ -716,7 +735,7 @@ footer{
     }
     #buy-vibes .btn-buy{
         width: 65%;
-        border: 2px solid var(--rose);
+        border: 2px solid var(--background);
         padding: 10px 20px;
     }
     #buy-vibes .btn-buy a  {

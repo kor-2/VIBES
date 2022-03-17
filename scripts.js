@@ -12,6 +12,7 @@ function filter(filtre){
         }
     })
 }
+
 /* ------------------------------ */
 /* ------Boutton plus moins------ */
 /* ------------------------------ */
@@ -95,3 +96,44 @@ if (window.screen.width < 695) {
     fleur[2].classList.add('hide')
     fleur[3].classList.add('hide')
 }
+
+
+/* --------------------------- */
+/* ------Changement skin------ */
+/* --------------------------- */
+
+let skins = document.getElementById('moon')
+
+skins.addEventListener('click', function(){
+
+    if(document.body.classList.contains('container')){
+
+        document.body.classList.replace('container','change')
+    }else{
+        document.body.classList.replace('change','container')
+    }
+})
+
+/* ------------------------- */
+/* ------Modal galerie------ */
+/* ------------------------- */
+
+
+
+var modalEle = document.querySelector(".modal");
+var modalImage = document.querySelector(".modalImage");
+var images = document.querySelectorAll('.imgGal')
+
+
+images.forEach(function(image){
+    image.addEventListener("click", function() {
+        let img = image.querySelector('.img').src
+        modalImage.src = img
+        modalEle.style.display = 'block'
+   });
+
+})
+
+document.querySelector(".close").addEventListener("click", () => {
+   modalEle.style.display = "none";
+});
